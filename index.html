@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simulasi Diffie-Hellman Key Exchange</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1> Simulasi Diffie-Hellman Key Exchange</h1>
+    <div class="button-group">
+      <button onclick="showManual()"> Input Manual</button>
+      <button onclick="showAuto()"> Generate Otomatis</button>
+    </div>
+
+    <!-- Form Input Manual -->
+    <div id="manualForm" class="form" style="display: none;">
+      <h2>Input Manual</h2>
+      <label>p (bilangan prima): <input type="number" id="p" /></label>
+      <label>g (akar primitif dari p): <input type="number" id="g" /></label>
+      <label>a (private key A): <input type="number" id="a" /></label>
+      <label>b (private key B): <input type="number" id="b" /></label>
+      <button class="action-button" onclick="runManual()"> Jalankan</button>
+    </div>
+
+    <!-- Form Otomatis -->
+    <div id="autoForm" class="form" style="display: none;">
+      <h2>Generate Otomatis</h2>
+      <label>p (bilangan prima): <input type="number" id="p_auto" readonly /></label>
+      <label>g (akar primitif): <input type="number" id="g_auto" readonly /></label>
+      <label>a (private key A): <input type="number" id="a_auto" readonly /></label>
+      <label>b (private key B): <input type="number" id="b_auto" readonly /></label>
+      <button class="action-button" onclick="runAuto()">Generate & Jalankan</button>
+    </div>
+
+    <pre id="output"></pre>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
